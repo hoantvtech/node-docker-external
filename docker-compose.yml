@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+    container_name: node_express_app
+    restart: always
+    ports:
+      - 9091:9099
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - node_express
+
+networks:
+  node_express:
